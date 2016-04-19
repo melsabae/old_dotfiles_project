@@ -44,7 +44,7 @@ end
 --}}}
 
 -- {{{ Styles
-theme.font      = "Droid Sans 8"
+theme.font      = "Envy Code R 13"
 
 -- {{{ Colors
 

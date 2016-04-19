@@ -14,6 +14,11 @@ do
 		continue
 	fi
 
+	if [ $rcfile == ".gitignore" ]
+	then
+		continue
+	fi
+
 	# check if this thing is a directory
 	if [ -d $rcfile ]
 	then 
