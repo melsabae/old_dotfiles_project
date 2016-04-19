@@ -1,0 +1,9 @@
+[user]
+	name = Mohammad El-Sabae
+	email = mohammad.elsabae@gmail.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[color]
+	ui = auto
