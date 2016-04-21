@@ -28,6 +28,7 @@ syntax on
 set t_Co=256 "256 color mode
 set number "set all line numbers
 set relativenumber "lines relatively numbered from current
+set colorcolumn=80
 "set cursorline "cursor tracking"
 "set cursorcolumn " cursor tracking"
 "set background=dark
