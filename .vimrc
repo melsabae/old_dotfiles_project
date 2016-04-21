@@ -26,11 +26,12 @@ endif
 syntax on
 
 set t_Co=256 "256 color mode
+set colorcolumn=80
 set number "set all line numbers
 set relativenumber "lines relatively numbered from current
 "set cursorline "cursor tracking"
 "set cursorcolumn " cursor tracking"
-"set background=dark
+set background=dark
 "colorscheme default
 "set ruler
 "set wrap
@@ -101,4 +102,3 @@ nmap tb :TagbarOpen fj<CR>
 nmap ttb :TagbarToggle<CR>
 nmap yr :YRShow<CR>
 set pastetoggle=<F2>
-
