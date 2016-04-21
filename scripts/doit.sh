@@ -63,16 +63,23 @@ do
 			else
 				if [ ! -L ~/$backup/$rcdir ] # if the dir exists but is not a link, prompt and make
 				then
-					#TODO
-					continue
+					read -p "Replace dir ~/$backup/$rcdir with symlink to $backupdir/$backup/$rcdir ? " answer
+					if [ answer == "y" -o answer == "Y" ]
+					then
+						mv ~/$backup/$rcdir $oldfiledir/$backup
+						ln -s $backupdir/$backup/$rcdir ~/$backup/$rcdir
+					fi
 				elif [ $(readlink ~/$backup/$rcdir) != $(realpath $backupdir/$backup/$rcdir) ] #if the symlink is not pointing to the repo
 				then
-					#TODO
-					continue
+					read -p "Replace symlink ~/$backup with symlink to $backupdir/$backup ? " answer
+					if [ answer == "y" -o answer == "Y" ]
+					then
+						rm ~/$backup/$rcdir
+						ln -s $backupdir/$backup/$rcdir ~/$backup/$rcdir
+					fi
 				fi
 			fi
 		done
-		continue
 	fi
 done
 
