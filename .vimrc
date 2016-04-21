@@ -81,6 +81,7 @@ Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/vim-scripts/YankRing.vim.git'
 Plug 'https://github.com/joequery/Stupid-EasyMotion.git'
 Plug 'https://github.com/godlygeek/tabular.git'
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
 call plug#end()
 
 "vim airline status bar

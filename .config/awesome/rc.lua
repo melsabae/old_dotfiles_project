@@ -454,3 +454,4 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
 																client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 																-- }}}
 
+																naughty.notify({ title = "Awesome Loaded"})
