@@ -83,6 +83,7 @@ Plug 'https://github.com/vim-scripts/YankRing.vim.git'
 Plug 'https://github.com/joequery/Stupid-EasyMotion.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/sjl/gundo.vim.git'
 call plug#end()
 
 "vim airline status bar
@@ -101,4 +102,5 @@ let g:yankring_history_dir = '~/.vim/plugged/YankRing.vim'
 nmap tb :TagbarOpen fj<CR>
 nmap ttb :TagbarToggle<CR>
 nmap yr :YRShow<CR>
+nmap gu :GundoToggle<CR>
 set pastetoggle=<F2>
