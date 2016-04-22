@@ -13,7 +13,6 @@ linkIt ()
 	fi
 
 	ln -s $backupdir/$1  ~/$1
-	echo "ln -s $backupdir/$1 ~/$1"
 }
 
 if [ ! -d $oldfiledir ]
@@ -64,6 +63,19 @@ do
 
 	if [ -d $backupdir/$backup ] # if the backup is its own dir of backups
 	then
+		if [ ! -d ~/$backup ] && [ ! -L ~/$backup ] # if the $backup is not a dir in ~ already but we are looking at a dir
+		then
+			echo "Creating symlink ~/$backup -> $backupdir/$backup"
+			linkIt $backup
+			continue
+		fi
+
+		# if the thing we're looking at is a dir, and the link is correctly pointing, then skip it
+		if [ -L ~/$backup ] && [ $(readlink ~/$backup) == $backupdir/$backup ]
+		then
+			continue
+		fi
+
 		for rcdir in $(ls -A $backupdir/$backup)
 		do
 			if [ ! -e ~/$backup/$rcdir ] #if no dir or link exists, make it
@@ -74,15 +86,20 @@ do
 			else
 				if [ ! -L ~/$backup/$rcdir ] # if the dir exists but is not a link, prompt and make
 				then
-					read -p "Replace dir ~/$backup/$rcdir with symlink to $backupdir/$backup/$rcdir ? " answer
+					read -p "Replace file/dir ~/$backup/$rcdir with symlink to $backupdir/$backup/$rcdir ? " answer
 					if [[ $answer =~ ^[Yy]$ ]]
 					then
-						mv ~/$backup/$rcdir $oldfiledir/$backup
+						if [ ! -d $oldfiledir/$backup ]
+						then
+							mkdir -p $oldfiledir/$backup
+						fi
+
+						mv ~/$backup/$rcdir $oldfiledir/$backup/
 						linkIt $backup/$rcdir
 					fi
 				elif [ $(readlink ~/$backup/$rcdir) != $(realpath $backupdir/$backup/$rcdir) ] #if the symlink is not pointing to the repo
 				then
-					read -p "Replace symlink ~/$backupdir/$backup ($(readlink $backupdir/$backup)) with symlink to $backupdir/$backup ? " answer
+					read -p "Replace symlink ~/$backup/$rcdir ($(readlink ~/$backup/$rcdir)) with symlink to $backupdir/$backup/$rcdir ? " answer
 					if [[ $answer =~ ^[Yy]$ ]]
 					then
 						rm ~/$backup/$rcdir
