@@ -26,12 +26,12 @@ endif
 syntax on
 
 set t_Co=256 "256 color mode
+set colorcolumn=80
 set number "set all line numbers
 set relativenumber "lines relatively numbered from current
-set colorcolumn=80
 "set cursorline "cursor tracking"
 "set cursorcolumn " cursor tracking"
-"set background=dark
+set background=dark
 "colorscheme default
 "set ruler
 "set wrap
@@ -84,6 +84,7 @@ Plug 'https://github.com/joequery/Stupid-EasyMotion.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
+Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
 "vim airline status bar
@@ -104,4 +105,3 @@ nmap ttb :TagbarToggle<CR>
 nmap yr :YRShow<CR>
 nmap gu :GundoToggle<CR>
 set pastetoggle=<F2>
-
