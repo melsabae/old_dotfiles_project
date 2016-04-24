@@ -44,7 +44,7 @@ end
 --}}}
 
 -- {{{ Styles
-theme.font      = "Envy Code R 11"
+theme.font      = "Hack-Regular 9"
 
 -- {{{ Colors
 
