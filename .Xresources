@@ -10,8 +10,8 @@ URxvt.matcher.button: 3
 URxvt.url-launcher: /usr/bin/qutebrowser
 
 
-URxvt.font: xft:Envy Code R:bold:pixelsize=17
-URxvt.letterSpace: 2
+URxvt.font: xft:Envy Code R:pixelsize=17
+URxvt.letterSpace: 1
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
