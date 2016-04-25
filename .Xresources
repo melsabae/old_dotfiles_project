@@ -9,9 +9,8 @@ URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-].[\\w/-]
 URxvt.matcher.button: 3
 URxvt.url-launcher: /usr/bin/qutebrowser
 
-
-URxvt.font: xft:Envy Code R:pixelsize=17
-URxvt.letterSpace: 1
+URxvt.font: xft:termsyn:pixelsize=11
+URxvt.letterSpace:0
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true

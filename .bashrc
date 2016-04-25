@@ -69,10 +69,10 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1='\[\033[1;36m\]{\[\033[1;32m\]\h: \w \[\033[5;30;42m\]$(__git_ps1)\[\033[0;1;36m\]}\[\033[1;36m\] \u\[\033[00m\]\n\[\033[1;31m\]\$:\[\033[00m\] '
+    PS1='\[\033[1;36m\]{\[\033[1;32m\]\h: \w\[\033[5;30;42m\]$(__git_ps1)\[\033[0;1;36m\]}\[\033[1;36m\] \u\[\033[00m\]\n\[\033[1;31m\]\$:\[\033[00m\] '
     ;;
 *)
-    PS1='\[\033[1;36m\]{\[\033[1;32m\]\h: \w \[\033[5;30;42m\]$(__git_ps1)\[\033[0;1;36m\]}\[\033[1;36m\] \u\[\033[00m\]\n\[\033[1;31m\]\$:\[\033[00m\] '
+    PS1='\[\033[1;36m\]{\[\033[1;32m\]\h: \w\[\033[5;30;42m\]$(__git_ps1)\[\033[0;1;36m\]}\[\033[1;36m\] \u\[\033[00m\]\n\[\033[1;31m\]\$:\[\033[00m\] '
 		;;
 
 esac
@@ -103,12 +103,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias cll='clear; ll'
     alias lsl='ls -1 | wc -l'
     alias gcc='gcc -mtune=native -Wall'
-    alias calc='gnome-calculator &'
     alias lst='ll -t'
-    alias node='nodejs'
-    alias browser='qutebrowser'
-		alias reflector='sudo reflector --verbose --country "United States" -l 20 --sort rate --save /etc/pacman.d/mirrorlist'
-		alias pacup='sudo su -c "pacman -Syy; pacman -Syu; pacman -Sc"'
+		alias browser='vimb'
 fi
 
 # some more ls aliases
