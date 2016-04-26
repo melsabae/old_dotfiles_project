@@ -2,5 +2,10 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+if shopt -q login_shell; then
+	[[ -f ~/.bashrc ]] && source ~/.bashrc
+	if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then exec startx; fi
+else
+	echo "not login shell"
+	exit 1
+fi
