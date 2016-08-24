@@ -106,7 +106,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias calc='gnome-calculator &'
     alias lst='ll -t'
 		alias reflector='sudo reflector --verbose --country "United States" -l 20 --sort rate --save /etc/pacman.d/mirrorlist'
-		alias pacup='sudo su -c "pacman -Syy; pacman -Syu; pacman -Sc"'
+		alias pacup='sudo su -c "pacman -Syy; pacman -Syu; pacman -Scc"'
 		alias top='htop'
 fi
 
