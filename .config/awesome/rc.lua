@@ -14,7 +14,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 
 battery = wibox.widget.textbox()    
-battery:set_font("Hack-Regular 12")
+battery:set_font("Hack-Regular 19")
 batterytimer = timer({ timeout = 3 })    
 batterytimer:connect_signal("timeout",    
 function()    
