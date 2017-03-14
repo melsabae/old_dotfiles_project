@@ -137,3 +137,5 @@ if ! shopt -oq posix; then
 fi
 
 shopt -s globstar
+
+export LESSHISTFILE=/dev/null

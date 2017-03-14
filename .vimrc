@@ -17,8 +17,8 @@ runtime! archlinux.vim
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 if has("autocmd")
-  filetype plugin indent on
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " remember place
+	filetype plugin indent on
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " remember place
 endif
 
 " The following are commented out as they cause vim to behave a lot
@@ -106,3 +106,5 @@ nmap ttb :TagbarToggle<CR>
 nmap yr :YRShow<CR>
 nmap gu :GundoToggle<CR>
 set pastetoggle=<F2>
+set viminfo=
+
