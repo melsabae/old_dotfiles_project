@@ -10,7 +10,7 @@ URxvt.matcher.button: 3
 URxvt.url-launcher: /usr/bin/qutebrowser
 
 
-URxvt.font: xft:Hack-Regular:pixelsize=21
+URxvt.font: xft:Hack-Regular:pixelsize=11
 URxvt.letterSpace: 0
 Xft.dpi: 96
 Xft.antialias: true
