@@ -3,7 +3,11 @@
 	email = mohammad.elsabae@gmail.com
 [core]
 	editor = vim
+	;autocrlf = input
+	;safecrlf = true
 [merge]
 	tool = vimdiff
 [color]
 	ui = auto
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
