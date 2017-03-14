@@ -44,7 +44,11 @@ end
 --}}}
 
 -- {{{ Styles
+<<<<<<< HEAD
+theme.font      = "Hack-Regular 19"
+=======
 theme.font      = "Hack-Regular 9"
+>>>>>>> desktop
 
 -- {{{ Colors
 
