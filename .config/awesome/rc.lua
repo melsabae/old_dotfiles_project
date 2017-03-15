@@ -13,16 +13,17 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
-battery = wibox.widget.textbox()
+battery = wibox.widget.textbox()    
 battery:set_font("Hack-Regular 19")
-batterytimer = timer({ timeout = 3 })
-batterytimer:connect_signal("timeout",
-function()
-	percentage = assert(io.popen("acpi -b | cut -d, -f2 -", "r"))
-	battery:set_text("[- " .. percentage:read("*l") .. " -]")
-	percentage:close()
-end
-)
+batterytimer = timer({ timeout = 3 })    
+batterytimer:connect_signal("timeout",    
+function()    
+	percentage = assert(io.popen("acpi -b | cut -d, -f2 -", "r"))    
+	battery:set_text("[- " .. percentage:read("*l") .. " -]")    
+	percentage:close()    
+end    
+)    
+batterytimer:start()
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -203,6 +204,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
 																	-- Widgets that are aligned to the right
 																	local right_layout = wibox.layout.fixed.horizontal()
 																	if s == 1 then right_layout:add(wibox.widget.systray()) end
+																	right_layout:add(battery)
 																	right_layout:add(mytextclock)
 																	right_layout:add(mylayoutbox[s])
 
