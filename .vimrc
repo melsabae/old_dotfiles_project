@@ -87,6 +87,7 @@ Plug 'https://github.com/sjl/gundo.vim.git'
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/henrik/vim-markdown-preview'
+Plug 'https://github.com/jeaye/color_coded.git'
 call plug#end()
 
 "vim airline status bar
