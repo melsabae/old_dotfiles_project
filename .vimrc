@@ -109,3 +109,5 @@ nmap yr :YRShow<CR>
 nmap gu :GundoToggle<CR>
 set pastetoggle=<F2>
 set viminfo=
+
+autocmd BufWritePre *.pl %s/\s\+$//e
