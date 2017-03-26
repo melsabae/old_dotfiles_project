@@ -24,3 +24,36 @@ RPROMPT='%U%2~%u $(git_super_status)'
 # spelling correction
 setopt correct
 setopt noclobber
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias sl='ls'
+    alias ll='ls -Altrh --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    # color output even through pipes
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    # less strips color sometimes
+    alias less='less -R'
+
+    alias vim.tiny='vim'
+    alias vi='vim'
+    alias vm='vim'
+    alias im='vim'
+    alias pythong='py'
+    alias py='python2.7'
+    alias cls='clear; ls'
+    alias cll='clear; ll'
+    alias lsl='ls -1 | wc -l'
+    alias gcc='gcc -mtune=native -Wall'
+    alias calc='gnome-calculator &'
+    alias lst='ll -t'
+                alias reflector='sudo reflector --verbose --country "United States" -l 20 --sort rate --save /etc/pacman.d/mirrorlist'
+                alias pacup='sudo su -c "pacman -Syy; pacman -Syu; pacman -Scc"'
+                alias top='htop'
+fi
+
