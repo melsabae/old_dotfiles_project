@@ -27,11 +27,12 @@ syntax on
 
 set t_Co=256 "256 color mode
 set colorcolumn=80
+hi Folded ctermfg=black
 set number "set all line numbers
 set relativenumber "lines relatively numbered from current
 "set cursorline "cursor tracking"
 "set cursorcolumn " cursor tracking"
-set background=dark
+"set background=dark
 "colorscheme default
 "set ruler
 "set wrap
@@ -88,6 +89,7 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/henrik/vim-markdown-preview'
 Plug 'https://github.com/jeaye/color_coded.git'
+Plug 'https://github.com/airblade/vim-gitgutter'
 call plug#end()
 
 "vim airline status bar
