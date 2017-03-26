@@ -3,9 +3,6 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
-# This will set the default prompt to the walters theme
-prompt walters
-
 # vi keybound menu selection
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -26,3 +23,4 @@ RPROMPT='%U%2~%u $(git_super_status)'
 
 # spelling correction
 setopt correct
+setopt noclobber
