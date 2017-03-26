@@ -20,40 +20,42 @@ Xft.rgba: rgba
 Xft.lcdfilter: lcddefault
 Xft.autohint: true
 
-!special
-*.foreground:   #c2b9a1
-*.background:   #000000
-*.cursorColor:  #c2b9a1
+
+! terminal.sexy -> jmbi theme
+! special
+*.foreground:   #ffffff
+*.background:   #1e1e1e
+*.cursorColor:  #ffffff
 
 ! black
-*.color0:       #1c1709
-*.color8:       #4f4939
+*.color0:       #5a7260
+*.color8:       #8da691
 
 ! red
-*.color1:       #8e4317
-*.color9:       #f07935
+*.color1:       #8f423c
+*.color9:       #eeaa88
 
 ! green
-*.color2:       #787200
-*.color10:      #d9d138
+*.color2:       #bbbb88
+*.color10:      #ccc68d
 
 ! yellow
-*.color3:       #945c00
-*.color11:      #ffab26
+*.color3:       #f9d25b
+*.color11:      #eedd99
 
 ! blue
-*.color4:       #315094
-*.color12:      #8aa9ed
+*.color4:       #e0ba69
+*.color12:      #c9b957
 
 ! magenta
-*.color5:       #5c2e40
-*.color13:      #ff8cb8
+*.color5:       #709289
+*.color13:      #ffcbab
 
 ! cyan
-*.color6:       #00617d
-*.color14:      #43bfe0
+*.color6:       #d13516
+*.color14:      #c25431
 
 ! white
-*.color7:       #c2b9a1
-*.color15:      #f2e8c9
+*.color7:       #efe2e0
+*.color15:      #f9f1ed
 
