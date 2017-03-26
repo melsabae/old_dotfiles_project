@@ -81,7 +81,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    alias sl='ls' 
+    alias sl='ls'
     alias ll='ls -Altrh --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -92,7 +92,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
     # less strips color sometimes
     alias less='less -R'
-    
+
     alias vim.tiny='vim'
     alias vi='vim'
     alias vm='vim'
@@ -138,3 +138,10 @@ fi
 shopt -s globstar
 
 export LESSHISTFILE=/dev/null
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
