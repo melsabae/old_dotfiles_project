@@ -3,6 +3,25 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _oldlist _complete _ignored _approximate
+zstyle ':completion:*' format 'completing %d'
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' '+l:|=* r:|=*'
+zstyle ':completion:*' max-errors 2 numeric
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' prompt 'found %e errors in completion'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' squeeze-slashes true
+zstyle :compinstall filename '/home/saba/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # vi keybound menu selection
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -22,8 +41,10 @@ PROMPT='%(?..[%F{red}%?%f] )%F{cyan}%B%m%b%f %F{yellow}%n%f %S>_%#%s '
 RPROMPT='%U%2~%u $(git_super_status)'
 
 # spelling correction
-setopt correct
-setopt noclobber
+setopt CORRECT_ALL
+
+# don't redirect-overwrite files
+setopt NOCLOBBER
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -66,6 +87,16 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+# completions go to the end of the completed word
+setopt ALWAYS_TO_END
+
+# row-major listings, like any sensible person should use
+setopt LIST_ROWS_FIRST
+
+# numbers are numbers, not characters
+setopt NUMERIC_GLOB_SORT
+
+
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
@@ -84,3 +115,4 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
